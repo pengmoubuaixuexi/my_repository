@@ -1,0 +1,15 @@
+#include "stdio.h"
+void main()
+{
+ int x ,y,z,m;
+ printf("«Î ‰»Îx:");
+ scanf("%d",&x);
+ printf("\n«Î ‰»Îy:");
+ scanf("%d",&y);
+ printf("\n«Î ‰»Îz:");
+ scanf("%d",&z);
+    m=-(x+y)*z;
+    printf("\n-(%d+%d)*%d=%d\n",x,y,z,m);
+    
+}
+

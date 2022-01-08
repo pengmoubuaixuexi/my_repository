@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1608346998 source:f:\我\c语言代码\分块\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1608346681 source:f:\我\c语言代码\分块\1.c
+	"1.h"
+
+1608347151 f:\我\c语言代码\分块\1.h
+	<stdio.h>
+
+1608347179 source:f:\我\c语言代码\分块\2.c
+	"2.h"
+
+1608347151 f:\我\c语言代码\分块\2.h
+	<stdio.h>
+

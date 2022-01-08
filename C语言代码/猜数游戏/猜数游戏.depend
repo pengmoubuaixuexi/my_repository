@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1607672155 source:f:\我\c语言代码\猜数游戏\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

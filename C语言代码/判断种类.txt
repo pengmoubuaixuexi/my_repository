@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+int main()
+
+{
+
+   char ch;
+
+   int x=0,y=0,z=0;
+
+   ch=getchar();
+
+   while(ch!='\n')
+
+   {
+
+       if(ch>='0'&&ch<='9')
+
+        x++;
+
+        else if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
+
+           y++;
+
+           else
+
+            z++;
+
+            ch=getchar();
+
+   }
+
+   printf("Êý×Ö%d,×ÖÄ¸%d,ÆäËû%d",x,y,z);
+
+   return 0;
+
+}
+

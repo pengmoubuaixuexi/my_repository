@@ -1,0 +1,17 @@
+import numpy as np
+# a=np.array([1,2,3,"4"])
+# b=np.arange(0,5,2)
+# c=np.random.random((3,3))
+# d=np.full((3,3),8)
+# f=np.eye(3)
+# e = np.random.randint(0,10,size(4,5))
+# print(f.dtype)
+# f=f.astype(np.int32)#astype是返回一个某类型的数组，但不改变原来的
+# print(f.dtype)
+a= np.random.randint(0,5,size=(3,8,1))
+b= np.random.randint(0,5,size=(1,8))
+print(a)
+print("="*30)
+print(b)
+print("="*30)
+print(a+b)

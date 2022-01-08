@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1607698772 source:f:\我\c语言代码\奇数和\main.c
+	<stdio.h>
+	<stdlib.h>
+

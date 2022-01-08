@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1606541921 source:f:\我\c语言代码\哥德巴赫猜想\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<math.h>
+

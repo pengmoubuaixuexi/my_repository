@@ -1,0 +1,115 @@
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+typedef struct {
+	float shibu;
+	float xubu;
+}Complex;
+void judge(Complex a);
+void creatComplex(Complex &a,float shibu,float xubu);
+void sumComplex(Complex &a , Complex b);
+void subComplex(Complex &a , Complex b);
+void multComplex(Complex &a , Complex b);
+float getShibu(Complex a);
+float Max(float a ,float b);
+float getXubu(Complex a);
+void divComplex(Complex &a , Complex b);
+void creatComplex(Complex &a,float shibu,float xubu){
+	a.shibu = shibu;
+	a.xubu = xubu;
+}
+void printComplex(Complex a){
+	judge(a);
+}
+void judge(Complex a){
+	if (abs(a.shibu)>0.01){
+		if (abs(a.xubu)>0.01){
+			if (a.xubu>0)
+				printf("%.2f+i%.2f\n",a.shibu,a.xubu);
+			else
+				printf("%.2f-i%.2f\n",a.shibu,-a.xubu);
+		}
+		else 
+			printf("%.2f",a.shibu);
+	}
+	else{
+		if (abs(a.xubu)>0.01 ){
+			if (a.xubu > 0)
+				printf("i%.2f\n",a.xubu);
+			else 
+				printf("-i%.2f",-a.xubu);
+		}
+		else
+			printf("0\n");
+}}
+void sumComplex(Complex &a , Complex b){
+	a.shibu = a.shibu + b.shibu;
+	a.xubu = a.xubu + b.xubu;
+	judge(a);
+}
+void subComplex(Complex &a ,Complex b){
+	a.shibu = a.shibu - b.shibu;
+	a.xubu = a.xubu - b.xubu;
+	judge(a);
+}
+void multComplex(Complex &a , Complex b){
+	a.shibu = a.shibu*b.shibu - a.xubu*b.xubu;
+	a.xubu = a.shibu*b.xubu +a.xubu*b.shibu;
+	if(abs(a.shibu)<0.01 &&abs(a.xubu)<0.01){
+		printf("0");
+	}
+}
+float getShibu(Complex a){
+	return a.shibu;
+}
+float getXubu(Complex a){
+	return a.xubu;
+}
+float Max(float a ,float b){
+	if (abs(a)>abs(b))
+		return abs(a);
+	else
+		return abs(b);
+}
+void divComplex(Complex &a , Complex b){
+	int i,j,max;
+	Complex c,d;
+	creatComplex(d,0,0);
+	creatComplex(c,0,0);
+	c.shibu = 1;
+	max = Max(a.shibu,a.xubu);
+	for(i=0;i<=max;i++){
+		for(j=0;j<=max;j++){
+			d.shibu = b.shibu;
+			d.xubu = b.xubu;
+			c.shibu = i;
+			c.xubu = j;
+			if(i!=0||j!=0){
+			multComplex(d,c);
+			if (abs(a.shibu - d.shibu )<0.01 && abs(a.xubu - d.xubu) <0.01){
+				a=c;
+				judge(a);
+				exit(1);
+			}
+			if(i==max&&j==max)
+				printf("无a,b为整数解的ai+bj能使得除式成立");
+			 }
+		}
+	}
+}
+int main(){
+	Complex a,b,c;
+	creatComplex(a,2.2,4.6);
+	creatComplex(b,1.1,2.3);
+	printComplex(a);
+	sumComplex(a,b);
+	subComplex(a,b);
+	multComplex(a,b);
+	judge(a);
+	float a1,a2;
+	a1 = getShibu(a);
+	a2 = getXubu(a);
+	printf("%.2f\n",a1);
+	printf("%.2f\n",a2);
+	divComplex(a,b);
+}

@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define maxsize 100
+typedef struct String{
+	char string[10];
+	struct String* next;
+}*HString;
+char juzi[maxsize];
+void initHString(HString &P){
+	P = (HString)malloc(sizeof(HString));
+}
+void inputHString(HString &P,int n){
+	int m = n/10,i,j;
+	HString L = P;
+	for(i=0;i<=m;i++){
+		HString Q = (HString)malloc(sizeof(HString));
+		if(i<m){
+			for(j=0;j<10;j++){
+				Q->string[j] = juzi[j+m*10];
+			}
+			L->next = Q;
+			L = L->next;
+		}
+		else{
+			for(j=0;j<=n%10;j++){
+				Q->string[j] = juzi[j+m*10];
+			}
+			L->next = Q;
+			L = L->next;
+		}
+	}
+	L->next = NULL;
+}
+void strReplace(HString &P,HString Q, HString S){//将P中首次出现的Q串换成S串。 
+	int i;
+	for(i=0;i<10;i++){
+		for(j=0;j<10;j++){
+			if(P->string[i] == Q->string[j])
+		}
+	}
+}
+void print(HString P){
+	
+}
+int main(){
+	int i;
+	HString P;
+	printf("请输入原来的字符串");
+	for(i=1;i<maxsize;i++){
+		scanf("%c",&juzi[i]);
+		if(juzi[i]=='\n'){
+			i--;
+			break;
+		}
+	}
+	initHString(P);
+	inputHString(P,i);
+	printf("请输入要被替换的字符串");
+	for(i=0;i<maxsize;i++){
+		scanf("%c",&juzi[i]);
+		if(juzi[i]=='\n'){
+			i--;
+			break;
+		}
+	}
+	initHString(Q);
+	inputHString(Q,i);
+	printf("请输入要替换成的字符串");
+	for(i=0;i<maxsize;i++){
+		scanf("%c",&juzi[i]);
+		if(juzi[i]=='\n'){
+			i--;
+			break;
+		}
+	}
+	initHString(S);
+	inputHString(S,i);
+	strReplace(P,Q,S);
+}

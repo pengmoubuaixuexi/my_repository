@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author pp
+ *
+ */
+module hash {
+}

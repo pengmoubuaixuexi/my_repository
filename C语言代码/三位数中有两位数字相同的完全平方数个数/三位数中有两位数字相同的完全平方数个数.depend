@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1607735690 source:f:\我\c语言代码\三位数中有两位数字相同的完全平方数个数\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
